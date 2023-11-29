@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Nunito+Sans:opsz@6..12&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+    <title> Job portal</title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h1 class="navbar-logo"><a href="#">JOBHUNT</a></h1>
+        <div class="navbar-menu">
+            <a href="#jobs">Jobs</a>
+            <a href="#companies">Companies</a>
+            <a href="#blog">Blog</a>
+            <a href="#">Sign In</a>
+        </div>
+        <div class="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+    <div class="search">
+        <label>SEARCH <input type="search" placeholder="search" style="height: 30px;"></label>
+    </div>
+
+    <div class="filter-box">
+        <select class="filter-select" id="job-level" name="job-level">
+            <option>Job level</option>
+            <option>Entry</option>
+            <option selected>Mid-Senior</option>
+            <option>Director</option>
+        </select>
+        <select class="filter-select" id="job-function" name="job-function">
+            <option>Job Function</option>
+            <option>IT</option>
+            <option>Management</option>
+            <option>Education</option>
+        </select>
+        <select class="filter-select" id="employment" name="employment">
+            <option>Empolyment Type</option>
+            <option>Internship</option>
+            <option>Part Time</option>
+            <option>Full Time</option>
+        </select>
+        <select class="filter-select" id="location" name="location">
+            <option>Location</option>
+            <option>Remote</option>
+            <option>US</option>
+            <option>UK</option>
+        </select>
+        <select class="filter-select" id="education" name="education">
+            <option>Education</option>
+            <option>High School</option>
+            <option selected>Bachelor's degree</option>
+            <option>Mark's degree</option>
+        </select>
+    </div>
+    <div class="filter-chosen">
+        <div class="chosen-card">
+            Remote <i class="fas fa-times-circle"></i>
+         </div>
+        <div class="chosen-card">
+            Full time <i class="fas fa-times-circle"></i>
+        </div>
+        <div class="chosen-card">
+            Financial Tech <i class="fas fa-times-circle"></i>
+        </div>
+        <div class="chosen-card">
+            Entry Level <i class="fas fa-times-circle"></i>
+        </div>
+    </div>
+    <section class="job-list" id="jobs">
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile"
+                    src="https://th.bing.com/th/id/OIP.MV2nNxRrRMU5p2IgaZzk7AAAAA?pid=ImgDet&w=177&h=99&c=7&dpr=1.6.jpg">
+                <div class="job-details">
+                    <h4>Tesla</h4>
+                    <h3>Mechanical Engineer</h3>
+                    <p>Join our team as Mechanical Engineer and Shape your Future</p>
+                </div>
+            </div>
+            <div class="job-posted">
+                Posted 2 min ago
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile"
+                    src="https://th.bing.com/th/id/OIP.lvZAPbo6UbH9FPO8AHKlbwHaFG?w=237&h=180&c=7&r=0&o=5&dpr=1.6&pid=1.7.jpg">
+                <div class="job-details">
+                    <h4>Ebay</h4>
+                    <h3>Business Development</h3>
+                    <p>Exciting Opportunities Await in Bussiness Development with us</p>
+                </div>
+            </div>
+            <div class="job-posted">
+                Posted 30 min ago
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile"
+                    src="https://th.bing.com/th/id/OIP.N8ygSNYrBMVNtWt2SIJwDgHaHa?pid=ImgDet&w=177&h=177&c=7&dpr=1.6.jpg">
+                <div class="job-details">
+                    <h4>Tik Tok</h4>
+                    <h3>Digital Marketing</h3>
+                    <p>Ignite your Career in Digital Marketing</p>
+                </div>
+            </div>
+            <div class="job-posted">
+                Posted 4 hours ago
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="data:image/jpeg;base64,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" height="35px" width="35px">
+                <div class="job-details">
+                    <h4>YouTube</h4>
+                    <h3>UI UX Design</h3>
+                    <p>Join us for UI/UX Design Adventure</p>
+                </div>
+            </div>
+            <div class="job-posted">
+                Posted 7 hours ago
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile"
+                    src="https://1.bp.blogspot.com/-xb9BGFyd0d8/XFa-xOcMQCI/AAAAAAAAG0c/A-3vr_0t7LkfUGQZQFCzFG64pfmeGgvsACK4BGAYYCw/s1600/Amazon%2BLogo%2B%255Bwww.blogovector.com%255D.jpg">
+                <div class="job-details">
+                    <h4>Amazon</h4>
+                    <h3>Software Engineer</h3>
+                    <p>Join our Team as Software Engineer and innovate with Impact</p>
+                </div>
+            </div>
+            <div class="job-posted">
+                Posted 15 hours ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile"
+                    src="https://www.adobe.com/content/dam/cc/icons/Adobe_Corporate_Horizontal_Red_HEX.svg">
+                <div class="job-details">
+                    <h4>Adobe</h4>
+                    <h3>Product Manager</h3>
+                    <p>Develop and execute a comprehensive product strategy aligned with company goals and market
+                        trends.</p>
+                </div>
+            </div>
+            <div class="job-posted">
+                Posted 1day ago
+            </div>
+        </div>
+
+    </section>
+    <section class="join">
+        <div class="join-detail">
+            <h1 class="section-title">LETS START YOUR NEW JOB WITH US</h1>
+            <p>Unlock your Potential:Embrace the Journey to Professional Fullfillment</p>
+        </div>
+        <button class="join-button">Join Now</button>
+    </section>
+    <section class="featured" id="companies">
+        <h1 class="section-title">Featured Companies</h1>
+
+        <div class="featured-wrapper">
+            <div class="featured-card">
+                <img src="https://th.bing.com/th/id/OIP.lvZAPbo6UbH9FPO8AHKlbwHaFG?w=237&h=180&c=7&r=0&o=5&dpr=1.6&pid=1.7.jpg"
+                    class="featured-image">
+                <p>Ebay</p>
+                <button class="featured-button">View jobs</button>
+            </div>
+            <div class="featured-card">
+            <img src="data:image/jpeg;base64,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" height="35px" width="35px">
+                <p>YouTube</p>
+                <button class="featured-button">View jobs</button>
+            </div>
+            <div class="featured-card">
+                <img src="https://th.bing.com/th/id/OIP.N8ygSNYrBMVNtWt2SIJwDgHaHa?pid=ImgDet&w=177&h=177&c=7&dpr=1.6.jpg"
+                    class="featured-image">
+                <p>Tiktok</p>
+                <button class="featured-button">View jobs</button>
+            </div>
+            <div class="featured-card">
+                <img src="https://th.bing.com/th/id/OIP.MV2nNxRrRMU5p2IgaZzk7AAAAA?pid=ImgDet&w=177&h=99&c=7&dpr=1.6.jpg"
+                    class="featured-image">
+                <p>Tesla</p>
+                <button class="featured-button">View jobs</button>
+            </div>
+            <div class="featured-card">
+                <img src="https://th.bing.com/th?id=OIP.2ssdpTeRAaVzckkC7pBDmgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.6&pid=3.1&rm=2.jpg"
+                    class="featured-image">
+                <p>Google</p>
+                <button class="featured-button">View jobs</button>
+            </div>
+            <div class="featured-card">
+                <img src="https://th.bing.com/th?id=OIP.lkR1eCnLcPZ32cYreDUNkgHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.6&pid=3.1&rm=2.jpg"
+                    class="featured-image">
+                <p>Facebook</p>
+                <button class="featured-button">View jobs</button>
+            </div>
+            <div class="featured-card">
+                <img src="https://th.bing.com/th?id=OIP.-l5nN2AY4GvY_7BrMSmnFwHaGG&w=275&h=226&c=8&rs=1&qlt=90&o=6&dpr=1.6&pid=3.1&rm=2.jpg"
+                    class="featured-image">
+                <p>Apple</p>
+                <button class="featured-button">View jobs</button>
+            </div>
+            <div class="featured-card">
+                <img src="https://1.bp.blogspot.com/-xb9BGFyd0d8/XFa-xOcMQCI/AAAAAAAAG0c/A-3vr_0t7LkfUGQZQFCzFG64pfmeGgvsACK4BGAYYCw/s1600/Amazon%2BLogo%2B%255Bwww.blogovector.com%255D.png"
+                    class="featured-image">
+                <p>Amazon</p>
+                <button class="featured-button">View jobs</button>
+            </div>
+            <div class="featured-card">
+                <img src="https://www.adobe.com/content/dam/cc/icons/Adobe_Corporate_Horizontal_Red_HEX.svg"
+                    class="featured-image">
+                <p>Adobe </p>
+                <button class="featured-button">View jobs</button>
+            </div>
+            <div class="featured-card">
+                <img src="https://aurus5.com/blog/images/2017-cisco-logo-4.png" class="featured-image">
+                <p>Cisco </p>
+                <button class="featured-button">View jobs</button>
+            </div>
+    </section>
+    <section class="blog" id="blog">
+        <h1 class="section-title"> Career Advice</h1>
+        <p> Learn more career tips from company's recruiter</p>
+        <div class="blog-wrapper">
+            <div class="blog-card">
+                <img src="https://wallpapercave.com/wp/wp3077568.jpg" class="blog-image">
+                <div class="blog-details">
+                    <span>11 Oct 2023</span>
+                    <h4>How to enjoy your work</h4>
+                    <div class="blog-points">
+                        <li>Recognizing Your Passions</li>
+                        <li>Create a Positive Workspace</li>
+                        <li>Build Positive Relationships</li>
+                        <li>Take Breaks,Learn and Grow</li>
+                        <li>Finding Work-Life Balance</li>
+                        <li>Celebrate Achievements</li>
+                    </div>
+
+                    <hr class="divider">
+                    <a href="#" class="blog-more">Read more</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="https://th.bing.com/th/id/OIP.-M6aGFYjvxnDE0XQToqbyQHaE7?w=239&h=180&c=7&r=0&o=5&dpr=1.6&pid=1.7"
+                    class="blog-image">
+                <div class="blog-details">
+                    <span>24 Apr 2023</span>
+                    <h4>Tips for technical interview</h4>
+                    <p>
+                    <div class="blog-points">
+                        <li>Practice Coding</li>
+                        <li>Know Your Resume</li>
+                        <li>Practice timed Mock Interview</li>
+                        <li>Review system design concepts</li>
+                        <li>Stay Calm Under Pressure</li>
+                        <li>Stay updated on Industry Trends</li>
+                    </div>
+                    </p>
+                    <hr class="divider">
+                    <a href="#" class="blog-more">Read more</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="https://th.bing.com/th/id/OIP.OUTo5a-LdxeQleee_uzfugHaEO?w=321&h=183&c=7&r=0&o=5&dpr=1.6&pid=1.7"
+                    class="blog-image">
+                <div class="blog-details">
+                    <span>06 Sep 2023</span>
+                    <h4>Managing Time Effectively</h4>
+                    <p>
+                    <div class="blog-points">
+                        <li>Create a To-Do List</li>
+                        <li>Set Realistic Deadlines</li>
+                        <li>Eliminate Time Wasters</li>
+                        <li>Break Down Big Projects</li>
+                        <li>Learn to Manage Stress</li>
+                        <li>Continuous Improvement</li>
+                    </div>
+                    </p>
+                    <hr class="divider">
+                    <a href="#" class="blog-more">Read more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-wrapper">
+            <h3>JOBHUNT</h3>
+            <P>Connecting Talent with Tomorrow's Opportunities: JOBHUNT</P>
+            <div class="social-meida">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-wrapper">
+            <h4>Explore</h4>
+            <a href="#">Top Companies</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Podcast</a>
+            <a href="#">Careers</a>
+        </div>
+        <div class="footer-wrapper">
+            <h4>About</h4>
+            <a href="#">FAQ</a>
+            <a href="#">Get Inspired</a>
+            <a href="#">Blog </a>
+        </div>
+        <div class="footer-wrapper">
+            <h4>Support</h4>
+            <a href="#">Customer Service</a>
+            <a href="#">Trust & Safety</a>
+            <a href="#">Partnership </a>
+        </div>
+        <div class="footer-wrapper">
+            <h4>Community</h4>
+            <a href="#">Community</a>
+            <a href="#">Invite a Friend</a>
+            <a href="#">Event</a>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
